@@ -337,9 +337,10 @@
         @media (max-width: 1024px) {
             .hero {
                 grid-template-columns: 1fr;
-                padding-top: 120px;
+                padding: 120px 24px 60px;
                 text-align: center;
                 gap: 40px;
+                min-height: auto;
             }
             .hero-content {
                 text-align: center;
@@ -347,10 +348,63 @@
             }
             .hero-illustration {
                 justify-content: center;
+                order: -1; /* Image on top for mobile */
             }
-            h1 { font-size: 3rem; }
-            nav { padding: 20px 30px; }
-            .hero, .tech-section, .features, footer { padding-left: 30px; padding-right: 30px; }
+            .hero-illustration img {
+                max-width: 100%;
+                transform: none !important;
+            }
+            h1 {
+                font-size: 2.5rem;
+                letter-spacing: -1px;
+            }
+            .hero-p {
+                margin: 0 auto 32px;
+                font-size: 1.1rem;
+            }
+            .hero-content div {
+                justify-content: center;
+                flex-direction: column;
+            }
+            .hero-content .btn {
+                width: 100%;
+            }
+            nav {
+                padding: 16px 24px;
+            }
+            .nav-links {
+                display: none; /* Can be enhanced with a toggle later if needed, but keeping layout intact */
+            }
+            .tech-section, .features, .bootcamps-section {
+                padding: 60px 24px;
+            }
+            .tech-grid-web {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                gap: 16px;
+            }
+            .tech-card {
+                padding: 20px 12px;
+            }
+            .tech-card img {
+                width: 40px;
+                height: 40px;
+            }
+            .bootcamp-container {
+                grid-template-columns: 1fr;
+            }
+            .complimentary-grid {
+                grid-template-columns: 1fr;
+            }
+            footer {
+                padding: 60px 24px;
+                flex-direction: column;
+                gap: 40px;
+            }
+            .footer-links-container {
+                flex-direction: column;
+                gap: 32px;
+                width: 100%;
+            }
         }
 
         @media (max-width: 768px) {
